@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="header navbar navbar-dark bg-primary">
+  <a class="navbar-brand">Tools</a>
+  <form action="" class="form-inline">
+    <select name="" class="form-control form-control-sm" id="shemeSelect">
+      <option value="default">Theme default</option>
+      <option value="light">light theme</option>
+      <option value="dark">Dak theme</option>
+    </select>
+  </form>
+</nav>
+<div class="wrapper">
+  <div class="container">
+    <div class="row block-item">
+      <form name="addTask">
+        <h6>Add new task</h2>
+        <div class="form-group">
+          <!-- <label for="exampleInputEmail1">Email address</label> -->
+          <input type="title" class="form-control" id="title" placeholder="Task title">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <!-- <label for="exampleInputPassword1">Password</label> -->
+          <input type="article" class="form-control" id="article" placeholder="Task body">
+        </div>
+        <button type="submit" class="btn btn-primary">Add task</button>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <ul class="list-group">
+        <!-- <ll class="list-group-item d-flex align-items-center flex-wrap mt-2">
+          <span style="font-weight: bold;">Task title</span>
+          <p class="mt-2 w-100">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi natus temporibus quae in, fuga totam itaque assumenda laudantium molestiae deleniti voluptatibus ullam veniam nesciunt ratione culpa aut nulla nihil accusantium!
+          </p>
+          <button class="btn btn-danger ml-auto delete-btn">Delete task</button>
+        </ll> -->
+      </ul>
+
+
+    </div>
+  </div>
+</div>  
+
+
+<script src="app.js"></script>
+</body>
+</html>

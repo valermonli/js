@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container"></div>
+<script>
+
+function Product(name, price, discount){
+  // Что здесь неявно происхоит
+  // 1. Создается новый объект
+  // 2. На этот объект привязывается ссылка this
+  // 3. Функция возвращает этот объект
+
+  this.brand = name;
+  this.price = price;
+  this.discount = discount;
+  // this.priceWithDiscount = function(){
+  //   return (this.price * (100 - this.discount))  / 100;
+  // }
+  // Добавление метода в прототип
+  Product.prototype.priceWithDiscount = function(){
+    return (this.price * (100 - this.discount))  / 100;
+  }
+}
+const apple = new Product("Apple", 400, 5);
+const amd = new Product("AMD", 300, 15);
+
+//console.log(apple);
+
+// Object create
+const protoForObject = {
+  seyHello(){
+    return "Hello Patrick";
+  },
+}
+
+const obj = Object.create(protoForObject);
+// Создаем объект obj прототипом которому будет protoForObject
+// Так же можно в него сложить какие-то данные
+
+const obj2 = Object.create(protoForObject, {
+  firstName: {
+    value: "Valermon",
+  },
+})
+
+
+function User(firstName, lastName){
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+User.prototype.getFullName = function(){
+  return `${this.firstName} ${this.lastName}`;
+};
+
+User.prototype.seyHello = function(){
+  return `Hello ${this.firstName} ${this.lastName}`;
+}
+
+const user = new User("Valermon", "Salyakhov");
+
+
+function Customer(firstName, lastName, membership){
+  // При данном методе наследования (функциональном) - прототипы НЕ наследуются
+  User.call(this, firstName, lastName);
+  // Если переменных (свойств) много то можно поступить так:
+  User.apply(this, arguments);
+
+}
+
+// Прототипное наследование
+Customer.prototype = Object.create(User.prototype);
+Customer.prototype.constructor = Customer; //Возвращаем переписанный конструктор
+
+
+const customer = new Customer("Spong", "Bob", "basic");
+</script>
+</body>
+</html>
