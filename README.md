@@ -2,5 +2,5 @@
 
 * TaskList
   * Простой скрипт добавления и удаления тасков (без сохранения)
- * tickets
+* tickets
   * Сервис поиска авиабилетов на API https://aviasales-api.herokuapp.com
